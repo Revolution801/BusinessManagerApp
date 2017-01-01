@@ -9,7 +9,9 @@ using Android.OS;
 
 namespace BusinessManager.Droid
 {
-	[Activity (Label = "BusinessManager.Droid", MainLauncher = true, Icon = "@drawable/icon")]
+	[Activity (Label = "BusinessManager.Droid", 
+		MainLauncher = true, 
+		Icon = "@drawable/icon")]
 	public class MainActivity : Activity
 	{
 		int count = 1;
