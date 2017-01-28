@@ -1,0 +1,21 @@
+syntax = "proto3";
+package com.revolutionlandscaping.businessmanager;
+
+import "business_manager_model.proto";
+
+message CommonAction {
+    com.revolutionlandscaping.businessmanager.UIBusinessManagerRequest request = 1;
+    com.revolutionlandscaping.businessmanager.UIBusinessManagerResponse response = 2;
+}
+
+message MainController {
+    CommonAction get_accounts = 1;
+    CommonAction save_accounts = 2;
+    CommonAction delete_accounts = 3;
+    CommonAction get_employees = 4;
+    CommonAction save_employees = 5;
+    CommonAction delete_employees = 6;
+    CommonAction get_jobs = 7;
+    CommonAction save_jobs = 8;
+    CommonAction delete_jobs = 9;
+}

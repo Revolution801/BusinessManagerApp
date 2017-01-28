@@ -1,0 +1,43 @@
+syntax = "proto3";
+package com.revolutionlandscaping.businessmanager;
+
+message Account {
+    string id = 1;
+    string first_name = 2;
+    string last_name = 3;
+    string address = 4;
+    string city = 5;
+    string state = 6;
+    string zip = 7;
+    string phone = 8;
+}
+
+message Employee {
+    string id = 1;
+    string first_name = 2;
+    string last_name = 3;
+    double hourly_rate = 4;
+}
+
+message Job {
+    string id = 1;
+    string account_id = 2;
+    string date = 3;
+    string description = 4;
+    double fixed_price = 5;
+    double hourly_rate = 6;
+    double hours = 7;
+}
+
+message UIBusinessManagerRequest {
+    string token = 1;
+    repeated Account accounts = 2;
+    repeated Employee employees = 3;
+    repeated Job jobs = 4;
+}
+
+message UIBusinessManagerResponse {
+    repeated Account accounts = 1;
+    repeated Employee employees = 2;
+    repeated Job jobs = 3;
+}

@@ -1,0 +1,14 @@
+// THIS FILE WAS AUTO-GENERATED. DO NOT ALTER!
+package com.revolutionlandscaping.businessmanager.services
+
+interface IMainService {
+	fun get_accounts(request: com.revolutionlandscaping.businessmanager.BusinessManagerModel.UIBusinessManagerRequest): com.revolutionlandscaping.businessmanager.BusinessManagerModel.UIBusinessManagerResponse
+	fun save_accounts(request: com.revolutionlandscaping.businessmanager.BusinessManagerModel.UIBusinessManagerRequest): com.revolutionlandscaping.businessmanager.BusinessManagerModel.UIBusinessManagerResponse
+	fun delete_accounts(request: com.revolutionlandscaping.businessmanager.BusinessManagerModel.UIBusinessManagerRequest): com.revolutionlandscaping.businessmanager.BusinessManagerModel.UIBusinessManagerResponse
+	fun get_employees(request: com.revolutionlandscaping.businessmanager.BusinessManagerModel.UIBusinessManagerRequest): com.revolutionlandscaping.businessmanager.BusinessManagerModel.UIBusinessManagerResponse
+	fun save_employees(request: com.revolutionlandscaping.businessmanager.BusinessManagerModel.UIBusinessManagerRequest): com.revolutionlandscaping.businessmanager.BusinessManagerModel.UIBusinessManagerResponse
+	fun delete_employees(request: com.revolutionlandscaping.businessmanager.BusinessManagerModel.UIBusinessManagerRequest): com.revolutionlandscaping.businessmanager.BusinessManagerModel.UIBusinessManagerResponse
+	fun get_jobs(request: com.revolutionlandscaping.businessmanager.BusinessManagerModel.UIBusinessManagerRequest): com.revolutionlandscaping.businessmanager.BusinessManagerModel.UIBusinessManagerResponse
+	fun save_jobs(request: com.revolutionlandscaping.businessmanager.BusinessManagerModel.UIBusinessManagerRequest): com.revolutionlandscaping.businessmanager.BusinessManagerModel.UIBusinessManagerResponse
+	fun delete_jobs(request: com.revolutionlandscaping.businessmanager.BusinessManagerModel.UIBusinessManagerRequest): com.revolutionlandscaping.businessmanager.BusinessManagerModel.UIBusinessManagerResponse
+}

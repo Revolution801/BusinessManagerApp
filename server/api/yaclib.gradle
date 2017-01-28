@@ -1,0 +1,132 @@
+import org.roylance.yaclib.YaclibPlugin
+import org.roylance.yaclib.core.models.DependencyDescriptor
+import org.roylance.yaclib.YaclibModel
+
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+        maven {
+            url "http://dl.bintray.com/roylancemichael/maven"
+            credentials {
+                username System.getenv('BINTRAY_USER')
+                password System.getenv('BINTRAY_KEY')
+            }
+        }
+        maven {
+            url "https://roylance-repo.appspot.com"
+            credentials {
+                username System.getenv('STANDARD_MAVEN_USER')
+                password System.getenv('STANDARD_MAVEN_PASSWORD')
+            }
+        }
+    }
+    dependencies {
+        classpath "org.roylance.yaclib:core:0.$yaclibVersion"
+        classpath "com.revolutionlandscaping.businessmanager:api:$major.$minor"
+        classpath "org.roylance.yaas:api:0.$yaasVersion"
+        classpath "org.roylance.yadel:api:0.$yadelVersion"
+        classpath "org.roylance.yaorm:api:0.$yaormVersion"
+    }
+}
+
+task execute(type: YaclibPlugin) {
+    def parentDir = new File(System.getProperty("user.dir")).parentFile.toString()
+
+    location = parentDir
+    mainModel = "com.revolutionlandscaping.businessmanager.BusinessManagerModel"
+    mainController = "com.revolutionlandscaping.businessmanager.BusinessManagerController"
+
+    dependencyDescriptors = new ArrayList<>()
+    def yadelDependency = YaclibModel.Dependency.newBuilder()
+            .setGroup("org.roylance.yadel")
+            .setName("api")
+            .setTypescriptModelFile("YadelModel")
+            .setMajorVersion(0)
+            .setMinorVersion(yadelVersion.toInteger())
+            .setMavenRepository(YaclibModel.Repository.newBuilder().setName("maven").setUrl("http://dl.bintray.com/roylancemichael/maven").build())
+            .build()
+
+    def yaasDependency = YaclibModel.Dependency.newBuilder()
+            .setGroup("org.roylance.yaas")
+            .setName("api")
+            .setTypescriptModelFile("YaasModel")
+            .setMajorVersion(0)
+            .setMinorVersion(yaasVersion.toInteger())
+            .setMavenRepository(YaclibModel.Repository.newBuilder().setName("maven").setUrl("http://dl.bintray.com/roylancemichael/maven").build())
+            .build()
+
+    dependencyDescriptors.add(new DependencyDescriptor(yadelDependency, "org.roylance.yadel.YadelController"))
+    dependencyDescriptors.add(new DependencyDescriptor(yaasDependency, "org.roylance.yaas.YaasController"))
+
+    thirdPartyServerDependencies = new ArrayList<>()
+
+    def akkaDependency = YaclibModel.Dependency.newBuilder().setType(YaclibModel.DependencyType.JAVA)
+            .setGroup("com.typesafe.akka")
+            .setName("akka-cluster_2.11")
+            .setThirdPartyDependencyVersion("2.4.7")
+            .build()
+
+    def mysql = YaclibModel.Dependency.newBuilder().setType(YaclibModel.DependencyType.JAVA)
+            .setGroup("mysql")
+            .setName("mysql-connector-java")
+            .setThirdPartyDependencyVersion("5.1.37")
+            .build()
+
+    def yaorm = YaclibModel.Dependency.newBuilder().setType(YaclibModel.DependencyType.JAVA)
+            .setGroup("org.roylance.yaorm")
+            .setName("api")
+            .setThirdPartyDependencyVersion("0.$yaormVersion")
+            .build()
+
+    def yaasYaorm = YaclibModel.Dependency.newBuilder().setType(YaclibModel.DependencyType.JAVA)
+            .setGroup("org.roylance.yaas")
+            .setName("yaorm")
+            .setThirdPartyDependencyVersion("0.$yaasVersion")
+            .build()
+
+    def yaasCommon = YaclibModel.Dependency.newBuilder().setType(YaclibModel.DependencyType.TYPESCRIPT)
+            .setGroup("org.roylance.yaas.common")
+            .setThirdPartyDependencyVersion("0.$yaasVersion.0")
+            .build()
+
+    def retrofitScalars = YaclibModel.Dependency.newBuilder().setType(YaclibModel.DependencyType.JAVA)
+            .setGroup("com.squareup.retrofit2")
+            .setName("converter-scalars")
+            .setThirdPartyDependencyVersion("2.1.0")
+            .build()
+
+    thirdPartyServerDependencies.add(akkaDependency)
+    thirdPartyServerDependencies.add(mysql)
+    thirdPartyServerDependencies.add(yaorm)
+    thirdPartyServerDependencies.add(yaasYaorm)
+    thirdPartyServerDependencies.add(yaasCommon)
+    thirdPartyServerDependencies.add(retrofitScalars)
+
+    mainDependency = YaclibModel.Dependency.newBuilder()
+            .setGroup("com.revolutionlandscaping.businessmanager")
+            .setName("api")
+            .setAuthorName(author_)
+            .setLicense(license_)
+            .setGithubRepo(githubRepo_)
+            .setMajorVersion(0)
+            .setMinorVersion(minor.toInteger())
+            .setTypescriptModelFile("BusinessManagerModel")
+            .setServerType(YaclibModel.ServerType.GRADLE_JETTY_EMBEDDED)
+            .setServerPort(8080)
+            .setYaclibVersion("0.$yaclibVersion")
+            .setNugetRepository(YaclibModel.Repository.newBuilder()
+            .setRepositoryType(YaclibModel.RepositoryType.NUGET)
+            .build())
+            .setMavenRepository(YaclibModel.Repository.newBuilder()
+            .setRepositoryType(YaclibModel.RepositoryType.STANDARD_MAVEN)
+            .setName(repoName_)
+            .setUrl(repoUrl_).build())
+            .setNpmRepository(YaclibModel.Repository.newBuilder()
+            .setRepositoryType(YaclibModel.RepositoryType.NPMJS).build())
+            .build()
+
+//    nugetKey = System.getenv('NUGET_KEY')
+
+    println(parentDir)
+}

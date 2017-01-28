@@ -1,0 +1,14 @@
+server/.gradle
+api/.gradle
+capi/.gradle
+sapi/.gradle
+server/gradle
+api/gradle
+capi/gradle
+sapi/gradle
+server/build
+api/build
+capi/build
+sapi/build
+javascript/node_modules
+sapi/src/main/javascript/node_modules

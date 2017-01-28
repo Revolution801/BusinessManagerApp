@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "noImplicitAny": false,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "sourceMap": true
+    },
+    "files": [
+	"IMainService.ts",
+	"MainService.ts",
+	"IHttpExecute.ts",
+	"BusinessManagerModel.d.ts",
+	"BusinessManagerModelFactory.ts",
+	"node_modules/roylance.common/bytebuffer.d.ts"
+    ]
+}
