@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BusinessManager
 {
-    class JobModel
+    public class JobModel
     {
         public int ID { get; private set; }
         public int AccountID { get; private set; }

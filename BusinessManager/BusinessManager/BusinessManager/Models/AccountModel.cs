@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BusinessManager
 {
-    class AccountModel
+    public class AccountModel
     {
         public int ID { get; private set; }
         public string FirstName { get; private set; }
