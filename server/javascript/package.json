@@ -1,14 +1,14 @@
 {
   "name": "com.revolutionlandscaping.businessmanager.api",
-  "version": "0.2.0",
+  "version": "0.4.0",
   "description": "models to interface with the com.revolutionlandscaping.businessmanager.api system",
   "author": "roylance.michael@gmail.com",
   "license": "MIT",
   
   
   "dependencies": {
-"org.roylance.yaas.common": "0.160.0"
-, "protobufjs": "^5.0.1"
+"org.roylance.yaas.common": "0.161.0"
+, "protobufjs": "5.0.1"
 , "roylance.common": "^0.12.0"
 
   }

@@ -1,6 +1,6 @@
 {
   "name": "com.revolutionlandscaping.businessmanager.api",
-  "version": "0.2.0",
+  "version": "0.4.0",
   "description": "base template for com.revolutionlandscaping.businessmanager.api",
   "author": "roylance.michael@gmail.com",
   "license": "MIT",
@@ -18,7 +18,7 @@
   },
   
   "dependencies": {
-"org.roylance.yaas.common": "0.160.0"
+"org.roylance.yaas.common": "0.161.0"
 , "angular": "^1.5.7"
 , "angular-route": "^1.5.7"
 , "bytebuffer": "^5.0.1"
@@ -28,11 +28,11 @@
 , "dagre-d3": "^0.4.17"
 , "font-awesome": "^4.6.3"
 , "jquery": "^2.2.4"
-, "protobufjs": "^5.0.1"
+, "protobufjs": "5.0.1"
 , "webpack-stream": "^3.2.0"
-,"com.revolutionlandscaping.businessmanager.api": "0.2.0"
-, "org.roylance.yadel.api": "0.186.0"
-, "org.roylance.yaas.api": "0.160.0"
+,"com.revolutionlandscaping.businessmanager.api": "0.4.0"
+, "org.roylance.yadel.api": "0.187.0"
+, "org.roylance.yaas.api": "0.161.0"
 
   }
 }

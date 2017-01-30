@@ -1,7 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{8C024387-AE3D-4250-ACBE-B6F292171D76}") = "Com.Revolutionlandscaping.Businessmanager.Api", "Com.Revolutionlandscaping.Businessmanager.Api.xproj", "{7CFF6C83-EC02-451F-972D-53A93D3B168C}"
+Project("{797FCF40-8C33-409D-B44E-4AADACEAD8FF}") = "Com.Revolutionlandscaping.Businessmanager.Api", "Com.Revolutionlandscaping.Businessmanager.Api.xproj", "{1FC3F8C3-0E1C-40AF-9C84-CD4C7E3DE8D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,9 +9,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7CFF6C83-EC02-451F-972D-53A93D3B168C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7CFF6C83-EC02-451F-972D-53A93D3B168C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7CFF6C83-EC02-451F-972D-53A93D3B168C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7CFF6C83-EC02-451F-972D-53A93D3B168C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FC3F8C3-0E1C-40AF-9C84-CD4C7E3DE8D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FC3F8C3-0E1C-40AF-9C84-CD4C7E3DE8D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FC3F8C3-0E1C-40AF-9C84-CD4C7E3DE8D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FC3F8C3-0E1C-40AF-9C84-CD4C7E3DE8D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -6,7 +6,7 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>7CFF6C83-EC02-451F-972D-53A93D3B168C</ProjectGuid>
+    <ProjectGuid>1FC3F8C3-0E1C-40AF-9C84-CD4C7E3DE8D9</ProjectGuid>
     <RootNamespace>Com.Revolutionlandscaping.Businessmanager.Api</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)' == ''">.\obj</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)' == ''">.\bin\</OutputPath>
